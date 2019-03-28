@@ -9,3 +9,5 @@ const insertSampleListings = function() {
 };
 
 // insertSampleListings();
+
+module.exports = sampleListings;
