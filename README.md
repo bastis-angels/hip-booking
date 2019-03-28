@@ -4,10 +4,10 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/bastis-angels/hip-photo-carousel
+  - https://github.com/bastis-angels/hip-the-vibe-photos
+  - https://github.com/bastis-angels/hip-reviews
+  - https://github.com/bastis-angels/hip-header-with-description
 
 ## Table of Contents
 
@@ -37,3 +37,10 @@ npm install -g webpack
 npm install
 ```
 
+# Getting Started
+* __Note:__ Nodemon should be installed globally.
+* Open a terminal instance for every service and one for the proxy.
+* Run 'npm install' for every service and the proxy.
+* Run 'npm run build' for every service to create a bundle.js file.
+* Run 'npm start' for every service and the proxy.
+* In a browser navigate to localhost:3000

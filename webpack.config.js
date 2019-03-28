@@ -1,23 +1,22 @@
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  context: __dirname + '/client',
-  entry: './index.js',
+  entry: './client/index.jsx',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015', 'env']
+          presets: ['@babel/react', '@babel/preset-env', 'airbnb']
         },
       },
     ],
   },
   output: {
-    path: __dirname + '/public',
     filename: 'app.js',
-  }
+    path: path.resolve(__dirname, 'public')
+  },
+  mode: 'development'
 };
