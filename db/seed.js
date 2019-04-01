@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const connection = require('./index.js')
 const Listing = require('./Listing.js');
 const faker = require('faker');
 
@@ -15,41 +15,38 @@ let genBookedDates = function() {
     let month = months[monthNumber];
     let day = date.getDate();
 
-    if (object[year] === undefined) {
-      object[year] = {};
-      object[year][month] = [];
-    } else if (object[year][month] === undefined) {
-      object[year][month] = [];
+    if (dates[year] === undefined) {
+      dates[year] = {};
+      dates[year][month] = [];
+    } else if (dates[year][month] === undefined) {
+      dates[year][month] = [];
     }
-    if (object[year][month].indexOf(day) === -1) {
-      object[year][month].push(day);
+    if (dates[year][month].indexOf(day) === -1) {
+      dates[year][month].push(day);
     }
   }
   return dates;
 }
 
 for (let i = 1; i <= 100; i++) {
-  listing = new Listing({
+  let listing = {
     listingId: i,
     host: faker.name.findName(),
     bookedDates: genBookedDates(),
     basePrice: faker.random.number({min: 10, max: 500}),
     occupancyFee: faker.random.number({min: 0, max: 30}),
     cleaningFee: faker.random.number({min: 0, max: 50})
-  })
+  }
+
   sampleListings.push(listing);
 }
 
-const insertSampleListings = function() {
-  Listing.insertMany(sampleListings, (err) => {
-    if (err) {
-      console.log(err);
-    }
-    console.log('disconnecting...');
-    mongoose.connection.close();
-  });
-};
 
-insertSampleListings();
+Listing.insertMany(sampleListings, (err) => {
+  if (err) console.log(err);
+
+  console.log('disconnecting...');
+  connection.close();
+});
 
 module.exports = sampleListings;

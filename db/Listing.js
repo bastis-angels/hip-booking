@@ -1,6 +1,4 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
-mongoose.Promise = global.Promise;
 
 const bookedYearSchema = new mongoose.Schema({
   Jan: Array,
@@ -24,9 +22,8 @@ const bookedDatesSchema = new mongoose.Schema({
   '2022': [bookedYearSchema]
 });
 
-
 const listingSchema = new mongoose.Schema({
-  listingId: Number,
+  listingId: { type: Number, index: { unique: true }},
   host: String,
   bookedDates: bookedDatesSchema,
   basePrice: Number,

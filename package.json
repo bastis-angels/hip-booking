@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "fake": "^0.2.2",
     "mongoose": "^5.4.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -30,11 +29,23 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "babel-preset-airbnb": "^3.2.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-to-json": "^3.3.5",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
     "jest": "^24.5.0",
+    "jest-enzyme": "^7.0.2",
     "nodemon": "^1.18.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "testEnvironment": "enzyme",
+    "testEnvironmentOptions": {
+      "enzymeAdapter": "react16"
+    },
+    "snapshotSerializers": ["enzyme-to-json/serializer"]
   }
 }

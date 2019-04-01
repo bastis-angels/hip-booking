@@ -11,10 +11,12 @@ app.get('/listing/:listingId', (req, res) => {
 });
 
 app.get('/listing/:listingId/booked', (req, res) => {
-  // returns array of dates that are booked/unavailable
   Listing.find({listingId: req.params.listingId}, (err, listings) => {
-    if (err) console.log(err);
-    res.send(listings);
+    if (err) {
+      console.log('Error: ' + err);
+    } else {
+      res.send(listings);
+    }
   })
 })
 
