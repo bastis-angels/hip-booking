@@ -1,3 +1,4 @@
+const connection = require('../db/index.js');
 const mongoose = require('mongoose');
 
 const bookedYearSchema = new mongoose.Schema({
