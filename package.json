@@ -14,14 +14,15 @@
   "scripts": {
     "seed": "node ./db/seed.js",
     "test": "jest",
-    "build": "run webpack -w",
+    "build": "webpack -w",
     "start": "nodemon ./server/server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.20",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
@@ -46,6 +47,8 @@
     "testEnvironmentOptions": {
       "enzymeAdapter": "react16"
     },
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

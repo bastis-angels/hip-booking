@@ -6,8 +6,13 @@ const Listing = require('../db/Listing.js');
 app.use(express.static('public'));
 
 app.get('/listing/:listingId', (req, res) => {
-  // returns object containing base price, additional occupancy fee, cleaning free, host name, and min/max guests
-  res.end();
+  Listing.find({listingId: req.params.listingId}, (err, listings) => {
+    if (err) {
+      console.log('Error: ' + err);
+    } else {
+      res.send(listings[0]);
+    }
+  })
 });
 
 app.get('/listing/:listingId/booked', (req, res) => {
@@ -15,7 +20,7 @@ app.get('/listing/:listingId/booked', (req, res) => {
     if (err) {
       console.log('Error: ' + err);
     } else {
-      res.send(listings);
+      res.send(listings[0].bookedDates);
     }
   })
 })
