@@ -16,10 +16,11 @@
     "test": "jest",
     "build": "webpack -w",
     "start": "nodemon ./server/server.js",
-    "lint:css":"stylelint './src/**/*.js'"
+    "lint:css": "stylelint './src/**/*.js'"
   },
   "dependencies": {
     "express": "^4.16.4",
+    "moment": "^2.24.0",
     "mongoose": "^5.4.20",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

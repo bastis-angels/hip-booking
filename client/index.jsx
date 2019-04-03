@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import moment from 'moment';
 
 import Banner from './components/Banner.jsx'
 import DatesAndGuests from './components/DatesAndGuests.jsx'

@@ -5,7 +5,7 @@ import Week from './Week.jsx'
 const Table = styled.tbody`
   font-size: 1.2em;
   font-weight: 300;
-  color: #333333;
+  color: #333;
   background-color: #fff;
   border: 1px solid #ebebeb;
   width: 400;
