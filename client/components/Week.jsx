@@ -20,7 +20,7 @@ const Row = styled.tr`
 export default function Week (props) {
   return (
     <Row>
-      <Day /><Day /><Day /><Day /><Day /><Day /><Day />
+      {props.days.map(day => <Day day={day}/>)}
     </Row>
   )
 }

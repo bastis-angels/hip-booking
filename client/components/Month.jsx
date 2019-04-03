@@ -8,7 +8,7 @@ const Table = styled.tbody`
   color: #333333;
   background-color: #fff;
   border: 1px solid #ebebeb;
-  width: auto;
+  width: 400;
   height: 36px;
   border-radius: 0;
   text-align: center;
@@ -31,12 +31,12 @@ export default function Month (props) {
       </tr>
       </thead>
       <Table>
-        <Week />
-        <Week />
-        <Week />
-        <Week />
-        <Week />
-        <Week />
+        <Week days={props.week1}/>
+        <Week days={props.week2}/>
+        <Week days={props.week3}/>
+        <Week days={props.week4}/>
+        <Week days={props.week5}/>
+        <Week days={props.week6}/>
       </Table>
     </table>
   )

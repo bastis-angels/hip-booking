@@ -12,11 +12,11 @@ const Square = styled.td`
   border-radius: 0;
   text-align: center;
   text-shadow: none !important;
-  padding: 5px;
+  padding: 10px;
 `
 
 export default function Day (props) {
   return (
-    <Square>props.day</Square>
+    <Square>{props.day}</Square>
   )
 }

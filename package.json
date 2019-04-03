@@ -15,7 +15,8 @@
     "seed": "node ./db/seed.js",
     "test": "jest",
     "build": "webpack -w",
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "lint:css":"stylelint './src/**/*.js'"
   },
   "dependencies": {
     "express": "^4.16.4",
@@ -38,6 +39,10 @@
     "jest": "^24.5.0",
     "jest-enzyme": "^7.0.2",
     "nodemon": "^1.18.10",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.6.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
