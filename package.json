@@ -47,8 +47,23 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
   "jest": {
-    "setupTestFrameworkScriptFile": "jest-enzyme",
+    "collectCoverage": true,
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "moduleNameMapper": {},
+    "setupFilesAfterEnv": [
+      "jest-enzyme"
+    ],
     "testEnvironment": "enzyme",
     "testEnvironmentOptions": {
       "enzymeAdapter": "react16"
