@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const BannerContainer = styled.div`
-  height: 74px;
   background-color: #fff;
   color: #757575;
   border: 1px solid #ebebeb;
@@ -10,9 +9,9 @@ const BannerContainer = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 13px 10px;
-  align-items: center;
 `
 
 const Price = styled.h5`
@@ -27,10 +26,8 @@ export default function Banner(props) {
   return (
     <BannerContainer>
       <Wrapper>
-        <div>
-          <Price>$20</Price>
-          per night
-        </div>
+        <Price>${props.basePrice}</Price>
+        per night
       </Wrapper>
     </BannerContainer>
     )

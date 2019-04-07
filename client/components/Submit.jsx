@@ -13,6 +13,10 @@ const Content = styled.div`
   font-weight: 400;
 `
 const Button = styled.button`
+  &:hover {
+    color: #40d9ac;
+    background-color: #fff;
+  }
   padding: 10px 15px;
   border: 3px solid #40d9ac;
   position: relative;
