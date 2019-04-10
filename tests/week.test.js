@@ -19,7 +19,7 @@ describe('Week', () => {
   it('renders week based on state.weekOfDate', () => {
     const week = shallow(      
       <Week 
-        weekOfDate={moment('2019-05-01').clone().day('Sunday')} 
+        weekOfDate={moment('2019-05-01').startOf('day').day('Sunday')} 
         arrive={'Select date'} 
         handleDayClick={() => null} 
       />

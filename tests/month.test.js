@@ -13,6 +13,6 @@ it('renders month based on state.moment', () => {
     setPreviousMonth={() => null} 
     setNextMonth={() => null}
   />);
-  month.setState({moment: moment('2019-05-12')})
+  month.setState({moment: moment('2019-05-12').startOf('day')})
   expect(toJson(month)).toMatchSnapshot();
 });
