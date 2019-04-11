@@ -36,7 +36,7 @@ describe('Day', () => {
   it('renders day based on state.moment', () => {
     const day = shallow(      
       <Day 
-        moment={moment('2019-05-12')}
+        moment={moment('2019-05-12').startOf('day')}
         handleDayClick={() => null}
         arrive = {'Select date'}
       />
